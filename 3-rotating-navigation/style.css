@@ -1,0 +1,159 @@
+/* Import Google font "Lato" for the website */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Apply universal box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Style for the body element */
+body {
+  font-family: 'Lato', sans-serif; /* Use Lato font throughout the page */
+  background-color: #333; /* Dark background color */
+  color: #222; /* Default text color */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0; /* Remove default body margin */
+}
+
+/* Main container that wraps the content */
+.container {
+  background-color: #fafafa; /* Light background color for the content area */
+  transform-origin: top left; /* Origin for rotation transformations */
+  transition: transform 0.5s linear; /* Smooth transition for transformations */
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* At least full viewport height */
+  padding: 50px; /* Padding around the content */
+}
+
+/* Transform the container when the navigation is active */
+.container.show-nav {
+  transform: rotate(-10deg); /* Rotate the container by -10 degrees */
+}
+
+/* Position the circle container with the open/close buttons */
+.circle-container {
+  position: fixed; /* Fix it in place on the screen */
+  top: -100px; /* Place off-screen at the top */
+  left: -100px; /* Place off-screen to the left */
+}
+
+/* Style for the circle around the buttons */
+.circle {
+  background-color: #ff7979; /* Light red background for the circle */
+  height: 200px; /* Circle height */
+  width: 200px; /* Circle width */
+  border-radius: 50%; /* Make it a perfect circle */
+  position: relative; /* Position for its inner elements */
+  transition: transform 0.5s linear; /* Smooth transition for transformations */
+}
+
+/* Rotate the circle when the navigation is active */
+.container.show-nav .circle {
+  transform: rotate(-70deg); /* Rotate circle by -70 degrees */
+}
+
+/* Style for the buttons inside the circle */
+.circle button {
+  position: absolute; /* Absolutely position the buttons inside the circle */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  height: 100px; /* Button height */
+  background: transparent; /* No background for buttons */
+  border: 0; /* No border */
+  font-size: 26px; /* Font size for button icons */
+  color: #fff; /* White color for icons */
+}
+
+/* Remove focus outline when buttons are clicked */
+.circle button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+/* Position the "open" button slightly to the right */
+.circle button#open {
+  left: 60%; /* Position the button more to the right */
+}
+
+/* Position and rotate the "close" button */
+.circle button#close {
+  top: 60%; /* Position the button lower */
+  transform: rotate(90deg); /* Rotate the "close" button */
+  transform-origin: top left; /* Set rotation point for the button */
+}
+
+/* Transition navigation items when container has 'show-nav' class */
+.container.show-nav + nav li {
+  transform: translateX(0); /* Bring the navigation items into view */
+  transition-delay: 0.3s; /* Delay the transition slightly */
+}
+
+/* Navigation container styling */
+nav {
+  position: fixed; /* Fix navigation at the bottom of the screen */
+  bottom: 40px; /* Position it 40px from the bottom */
+  left: 0; /* Align navigation to the left edge */
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+/* Styling for the unordered list inside navigation */
+nav ul {
+  list-style-type: none; /* Remove default list styling */
+  padding-left: 30px; /* Add padding to the left of the list */
+}
+
+/* Styling for each list item in the navigation */
+nav ul li {
+  text-transform: uppercase; /* Make text in each item uppercase */
+  color: #fff; /* White text color */
+  margin: 40px 0; /* Space between list items */
+  transform: translateX(-100%); /* Initially move items off-screen */
+  transition: transform 0.4s ease-in; /* Smooth transition when they appear */
+}
+
+/* FontAwesome icon inside each list item */
+nav ul li i {
+  font-size: 20px; /* Size of the icons */
+  margin-right: 10px; /* Add space between icon and text */
+}
+
+/* Styling for the second list item (with a greater transform) */
+nav ul li + li {
+  margin-left: 15px; /* Extra margin for subsequent items */
+  transform: translateX(
+    -150%
+  ); /* Move this item farther off-screen initially */
+}
+
+/* Styling for the third list item (with even greater transform) */
+nav ul li + li + li {
+  margin-left: 30px; /* Extra margin for the third item */
+  transform: translateX(-200%); /* Move it farther off-screen initially */
+}
+
+/* Responsive image styling */
+.content img {
+  max-width: 100%; /* Ensure image scales responsively */
+}
+
+/* Content area styles */
+.content {
+  max-width: 1000px; /* Set maximum width of the content area */
+  margin: 50px auto; /* Center content horizontally with space on top/bottom */
+}
+
+/* Heading inside the content area */
+.content h1 {
+  margin: 0; /* Remove margin for the heading */
+}
+
+/* Styling for small text (author's name) */
+.content small {
+  color: #555; /* Dark gray color for small text */
+  font-style: italic; /* Italicize the text */
+}
+
+/* Paragraph styling inside the content */
+.content p {
+  color: #333; /* Dark text color */
+  line-height: 1.5; /* Space out lines of text for readability */
+}
