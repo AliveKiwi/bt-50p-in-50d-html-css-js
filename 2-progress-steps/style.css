@@ -1,0 +1,118 @@
+/* Import a Google font (Muli) */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* Define custom CSS variables for color values */
+:root {
+  --line-border-fill: #3498db; /* Blue color for active progress and borders */
+  --line-border-empty: #e0e0e0; /* Light gray color for inactive progress and borders */
+}
+
+/* Apply universal box-sizing to all elements, ensuring padding and borders are included in element's width/height */
+* {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  background-color: #f6f7fb; /* Light background color */
+  font-family: 'Muli', sans-serif; /* Use Muli font, fallback to sans-serif */
+  display: flex; /* Flexbox layout to center content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide any overflow */
+  margin: 0; /* Remove default margin */
+}
+
+/* Container for the progress bar and controls */
+.container {
+  text-align: center; /* Center the text within the container */
+}
+
+/* Progress bar container */
+.progress-container {
+  display: flex; /* Flexbox to layout progress circles evenly */
+  justify-content: space-between; /* Spread out the circles evenly */
+  position: relative; /* For positioning the progress line and bar */
+  margin-bottom: 30px; /* Add space below the progress bar */
+  max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
+  width: 350px; /* Set a fixed width for the progress bar */
+}
+
+/* Progress bar background line (empty state) */
+.progress-container::before {
+  content: ''; /* Creates a pseudo-element for the background line */
+  background-color: var(--line-border-empty); /* Light gray background color */
+  position: absolute; /* Absolutely position this line */
+  top: 50%; /* Vertically center it */
+  left: 0; /* Align to the left edge of the container */
+  transform: translateY(-50%); /* Perfect vertical centering */
+  height: 4px; /* Set the line thickness */
+  width: 100%; /* Full width of the container */
+  z-index: -1; /* Place the background line behind other elements */
+}
+
+/* Progress bar active line (filled state) */
+.progress {
+  background-color: var(--line-border-fill); /* Blue active progress color */
+  position: absolute; /* Absolutely positioned for dynamic resizing */
+  top: 50%; /* Vertically center it */
+  left: 0; /* Start from the left */
+  transform: translateY(-50%); /* Perfect vertical centering */
+  height: 4px; /* Set the line thickness */
+  width: 0%; /* Initially, no progress is shown (0%) */
+  z-index: -1; /* Behind the circles */
+  transition: 0.4s ease; /* Smooth transition for width changes */
+}
+
+/* Circle elements (represent steps in the progress) */
+.circle {
+  background-color: #fff; /* White background for circles */
+  color: #999; /* Gray color for the circle text */
+  border-radius: 50%; /* Makes the circle perfectly round */
+  height: 30px; /* Set the height */
+  width: 30px; /* Set the width */
+  display: flex; /* Flexbox to center content within the circle */
+  align-items: center; /* Vertically center the number */
+  justify-content: center; /* Horizontally center the number */
+  border: 3px solid var(--line-border-empty); /* Border with empty state color */
+  transition: 0.4s ease; /* Smooth transition for active/inactive state changes */
+}
+
+/* Active circle (when a step is completed) */
+.circle.active {
+  border-color: var(
+    --line-border-fill
+  ); /* Change the border color to active (blue) */
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--line-border-fill); /* Blue background */
+  color: #fff; /* White text */
+  border: 0; /* Remove default button borders */
+  border-radius: 6px; /* Slightly rounded corners */
+  cursor: pointer; /* Change the cursor to pointer on hover */
+  font-family: inherit; /* Inherit the font from the body (Muli) */
+  padding: 8px 30px; /* Padding for the button */
+  margin: 5px; /* Space around buttons */
+  font-size: 14px; /* Font size for the button text */
+}
+
+/* Button active state (on click) */
+.btn:active {
+  transform: scale(0.98); /* Slightly shrink the button on click */
+}
+
+/* Button focus state (accessibility focus outline removal) */
+.btn:focus {
+  outline: 0; /* Remove the default outline when the button is focused */
+}
+
+/* Disabled button state */
+.btn:disabled {
+  background-color: var(
+    --line-border-empty
+  ); /* Gray background for disabled state */
+  cursor: not-allowed; /* Change the cursor to indicate the button is disabled */
+}
