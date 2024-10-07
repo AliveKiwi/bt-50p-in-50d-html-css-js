@@ -1,0 +1,72 @@
+/* Import Google font "Muli" */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* Apply universal box-sizing rule to include padding and border in element's total width/height */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body element */
+body {
+  background-image: linear-gradient(
+    90deg,
+    #7d5fff,
+    #7158e2
+  ); /* Apply a gradient background */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font for the body text */
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Vertically center the search bar */
+  justify-content: center; /* Horizontally center the search bar */
+  height: 100vh; /* Make body take the full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  margin: 0; /* Remove default margin */
+}
+
+/* Main search bar container */
+.search {
+  position: relative; /* Position relative for internal elements */
+  height: 50px; /* Set the height for the search bar */
+}
+
+/* Styling for the input field inside the search bar */
+.search .input {
+  background-color: #fff; /* White background for the input field */
+  border: 0; /* Remove the border */
+  font-size: 18px; /* Set font size */
+  padding: 15px; /* Padding around the text */
+  height: 50px; /* Height matching the container */
+  width: 50px; /* Initially the width is set to 50px (hidden state) */
+  transition: width 0.3s ease; /* Smooth transition when the width changes */
+}
+
+/* Button for the search icon */
+.btn {
+  background-color: #fff; /* White background for the button */
+  border: 0; /* Remove the border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 24px; /* Font size for the search icon */
+  position: absolute; /* Position button absolutely inside the search bar */
+  top: 0; /* Align to the top of the search container */
+  left: 0; /* Align to the left of the search container */
+  height: 50px; /* Button height matching the container */
+  width: 50px; /* Button width matching the initial input width */
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+/* Remove focus outline from button and input */
+.btn:focus,
+.input:focus {
+  outline: none; /* Remove default browser outline when elements are focused */
+}
+
+/* When the search bar has the "active" class */
+.search.active .input {
+  width: 200px; /* Expand the input field to 200px width */
+}
+
+/* Move the button when the search bar is active */
+.search.active .btn {
+  transform: translateX(
+    198px
+  ); /* Move the button to the right, aligning with the expanded input */
+}
