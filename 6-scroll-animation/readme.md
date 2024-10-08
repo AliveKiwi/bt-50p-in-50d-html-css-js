@@ -1,4 +1,4 @@
-# Explanation of the Animation and Layout:
+# Explanation of the Animation and Layout
 
 ## CSS
 
@@ -60,5 +60,3 @@ Let me know if you'd like to see how the JavaScript might work to add the `.show
 3. The boxes that cross the 80% mark (determined by `triggerBottom`) will have the `.show` class added and slide into view, while those below it will hide.
 
 This creates a scroll-based animation where the boxes smoothly slide in from the left or right as they come into the visible part of the viewport.
-
-Would you like help with further customization or explanation?

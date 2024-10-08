@@ -1,4 +1,4 @@
-# Explanation of How it Works:
+# Explanation of How it Works
 
 ## CSS
 
@@ -49,5 +49,3 @@ Would you like to see an example of how the JavaScript might handle the dynamic 
 - The **CSS** defines the initial appearance of the elements, like the blurred background and large loading text. The JavaScript dynamically modifies the opacity of the loading text and the blur filter on the background as the page "loads."
 
 This creates a smooth, visually engaging loading screen with a "blurring out" effect on the background and fading text.
-
-Let me know if you need further clarification or additional functionality!
