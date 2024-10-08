@@ -1,0 +1,58 @@
+/* Import Google font "Muli" */
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* Apply universal box-sizing rule */
+* {
+  box-sizing: border-box;
+}
+
+/* Style for the body element */
+body {
+  background-color: #efedd6; /* Light background color */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font for body text */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column; /* Align content vertically in a column */
+  align-items: center; /* Horizontally center all content */
+  justify-content: center; /* Vertically center the first element (h1) */
+  margin: 0; /* Remove default margin */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Style for the main heading */
+h1 {
+  margin: 10px; /* Add space around the heading */
+}
+
+/* Style for each content box */
+.box {
+  background-color: steelblue; /* Steelblue background color for the boxes */
+  color: #fff; /* White text color */
+  display: flex; /* Flexbox to center the content within the box */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  width: 400px; /* Fixed width for each box */
+  height: 200px; /* Fixed height for each box */
+  margin: 10px; /* Add margin between the boxes */
+  border-radius: 2px 4px 5px rgba(0, 0, 0, 0.3); /* Apply rounded corners with slight shadow */
+  transform: translateX(
+    400%
+  ); /* Initially position the box off-screen to the right */
+  transition: transform 0.4s ease; /* Smooth transition for transform property */
+}
+
+/* Style for every even-numbered box */
+.box:nth-of-type(even) {
+  transform: translateX(
+    -400%
+  ); /* Initially position even-numbered boxes off-screen to the left */
+}
+
+/* When the 'show' class is added, position the boxes on the screen */
+.box.show {
+  transform: translateX(0); /* Bring the box to its normal position */
+}
+
+/* Style for the h2 inside each box */
+.box h2 {
+  font-size: 45px; /* Large font size for content inside each box */
+}
