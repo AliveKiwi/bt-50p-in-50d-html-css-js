@@ -1,0 +1,39 @@
+/* Import Google font "Ubuntu" */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+/* Apply universal box-sizing rule to include padding and borders in element's width/height calculations */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body element */
+body {
+  font-family: 'Ubuntu', sans-serif; /* Use Ubuntu font for text */
+  display: flex; /* Flexbox to center content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide any overflow (no scrollbars) */
+  margin: 0; /* Remove default margin */
+}
+
+/* Background image section */
+.bg {
+  background: url('https://media.istockphoto.com/id/1370051021/photo/the-process-of-pouring-molten-steel-into-a-metallurgical-furnace.jpg?s=1024x1024&w=is&k=20&c=0BI3nZgVz3NGaWNpJockQ_HpVd2iuosBl6EGgAbJwVw=')
+    no-repeat center center/cover; /* Set background image, center it, and cover the entire section */
+  position: absolute; /* Position it absolutely relative to the viewport */
+  top: -30px; /* Move the background slightly above the viewport */
+  left: -30px; /* Move the background slightly left */
+  width: calc(100vw + 60px); /* Ensure background extends beyond the viewport */
+  height: calc(100vh + 60px); /* Extend background beyond the viewport height */
+  z-index: -1; /* Place the background behind other elements */
+  filter: blur(
+    70px
+  ); /* Apply a blur effect to the background (blurry loading effect) */
+}
+
+/* Style for the loading text */
+.loading-text {
+  font-size: 50px; /* Large font size for the loading percentage text */
+  color: #fff; /* White text color to contrast the background */
+}
